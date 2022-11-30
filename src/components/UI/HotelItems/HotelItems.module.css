@@ -1,0 +1,9 @@
+.main{
+	width: fit-content;
+	margin: 0 auto 66px auto;
+	display: grid;
+	grid-template-columns: repeat(3, 520px);
+	grid-template-rows: repeat(2, 400px);
+	grid-auto-rows: 400px;
+	gap: 60px 60px;
+}
