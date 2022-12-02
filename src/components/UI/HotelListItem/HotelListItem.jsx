@@ -7,28 +7,34 @@ import union from './union.svg';
 // eslint-disable-next-line react/prop-types
 const HotelListItem = ({info}) => {
 	// eslint-disable-next-line react/prop-types
-	const {hotelName, location, hotelNumber, hotelDescription, Worker} = info
-	// eslint-disable-next-line react/prop-types
-	const {name, email, number} = Worker
+	
+	
 	return (
 			<div className={classes.item}>
-				<h2 className={classes.title}>{hotelName}</h2>
+				{/* eslint-disable-next-line react/prop-types */}
+				<h2 className={classes.title}>{info['hotel_name']}</h2>
 				<div className={classes.wrapper}>
 					<img src={locations} alt="location"/>
 					<div className={classes.addr}>
-						<div className={classes.town}>{location}</div>
-						<div className={classes.phone}>{hotelNumber}</div>
+						{/* eslint-disable-next-line react/prop-types */}
+						<div className={classes.town}>{info.location}</div>
+						{/* eslint-disable-next-line react/prop-types */}
+						<div className={classes.phone}>{info['hotel_number']}</div>
 					</div>
 					<img src={union} alt="info"/>
 					<div className={classes.about}>
-						<div className={classes.name}>{name}</div>
-						<div className={classes.email}>{email}</div>
-						<div className={classes.ph}>{number}</div>
+						{/* eslint-disable-next-line react/prop-types */}
+						<div className={classes.name}>{info.Worker.name}</div>
+						{/* eslint-disable-next-line react/prop-types */}
+						<div className={classes.email}>{info.Worker.email}</div>
+						{/* eslint-disable-next-line react/prop-types */}
+						<div className={classes.ph}>{info.Worker.number}</div>
 					</div>
 					<img src={inf} alt="info"/>
 					<div className={classes.descr}>
 						<div className={classes.text}>
-							{hotelDescription}
+							{/* eslint-disable-next-line react/prop-types */}
+							{info['hotel_description']}
 						</div>
 					</div>
 				</div>

@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from "./SearchInput.module.css"
 import search from './search.svg'
-const SearchInput = () => {
+// eslint-disable-next-line react/prop-types
+const SearchInput = ({onInput}) => {
 	return (
 		<div className={classes.wrapper}>
 			<img src={search} alt="search"/>
-			<div className={classes.inputWrapper}><input placeholder="найти" type="text"/></div>
+			<div className={classes.inputWrapper}><input placeholder="найти" type="text" onChange={(e) => onInput(e.target.value)}/></div>
 		</div>
 	);
 };

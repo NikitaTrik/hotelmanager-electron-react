@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import {Link} from "react-router-dom";
 import {useOutsideClick} from "../../../hooks/useOutsideClick";
-import HotelList from "../../../pages/HotelList/HotelList";
 import classes from './Sidebar.module.css'
 
 
@@ -14,16 +13,16 @@ const Sidebar = ({menuState, toggleSlidebar}) => {
 		<div ref={sideRef} className={mainClasses}>
 			<h2 className={classes.title}>Меню</h2>
 			<div className={classes.link}>
-				<Link to={HotelList}>Список контактов</Link>
+				<Link to='/'>Список контактов</Link>
 			</div>
 			<div className={classes.link}>
-				<Link to={HotelList}>Список клиентов</Link>
+				<Link to='/'>Список клиентов</Link>
 			</div>
 			<div className={classes.link}>
-				<Link to={HotelList}>Список отелей</Link>
+				<Link to='/'>Список отелей</Link>
 			</div>
 			<div className={classes.link}>
-				<Link to={HotelList}>Список туров</Link>
+				<Link to='/'>Список туров</Link>
 			</div>
 			<h3 className={classes.version}>version 2.0</h3>
 		</div>

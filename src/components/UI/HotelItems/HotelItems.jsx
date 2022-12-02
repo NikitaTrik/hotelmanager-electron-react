@@ -3,17 +3,18 @@ import CreateButton from "../CreateButton/CreateButton";
 import HotelListItem from "../HotelListItem/HotelListItem";
 import classes from './HotelItems.module.css'
 
-const HotelItems = (hotels) => {
+// eslint-disable-next-line react/prop-types
+const HotelItems = ({hotels}) => {
 	
-	console.log(hotels)
 	return (
 		<div className={classes.main}>
+			{/* eslint-disable-next-line react/prop-types */}
 			{hotels.length > 0
+				// eslint-disable-next-line react/prop-types
 			? hotels?.map(hotelData =>
 					<HotelListItem key={hotelData.id} info={hotelData}/>)
-				: null}
-			
-			<CreateButton/>
+			: <h1></h1>}
+			<CreateButton href="/hcreate"/>
 		</div>
 	);
 };

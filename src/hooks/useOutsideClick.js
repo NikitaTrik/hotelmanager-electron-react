@@ -4,7 +4,6 @@ export function useOutsideClick(elementRef, attached, handler){
 	const isFirstRun = useRef(true);
 	useEffect(() => {
 			if (isFirstRun.current){
-				console.log('First')
 				isFirstRun.current = false;
 				return;
 			}

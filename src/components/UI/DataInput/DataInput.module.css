@@ -1,0 +1,23 @@
+.main{
+	width: 920px;
+	height: 54px;
+	padding: 12px 20px 12px 20px;
+	border: 1px solid #D0D0D0;
+	background: rgba(235, 235, 235, 0);
+	border-radius: 5px;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+	margin-top: 15px;
+}
+.main:focus{
+	outline: none;
+}
+
+.main::-webkit-input-placeholder{
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+}

@@ -1,0 +1,26 @@
+.main{
+	width: 920px;
+	height: 198px;
+	display: block;
+	padding: 12px 17px;
+	border: 1px solid #D0D0D0;
+	border-radius: 5px;
+	font-weight: 400;
+	font-size: 24px;
+	resize: none;
+	background: #EBEBEB;
+	line-height: 29px;
+	transition: 0.5s all;
+	margin-top: 15px;
+}
+
+.main::-webkit-input-placeholder{
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+}
+
+.main:focus{
+	outline: none;
+}

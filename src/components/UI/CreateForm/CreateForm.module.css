@@ -1,0 +1,15 @@
+.main{
+	width: 1000px;
+	padding: 20px 40px 30px 20px;
+	background: rgba(235, 235, 235, 0.93);
+	border-radius: 5px;
+}
+h2{
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 38px;
+	margin-bottom: 5px;
+}
+.wrapper{
+	margin-left: 20px;
+}
