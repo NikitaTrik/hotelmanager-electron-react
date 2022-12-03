@@ -9,7 +9,7 @@ const HotelItems = ({hotels}) => {
 	return (
 		<div className={classes.main}>
 			{/* eslint-disable-next-line react/prop-types */}
-			{hotels.length > 0
+			{hotels?.length > 0
 				// eslint-disable-next-line react/prop-types
 			? hotels?.map(hotelData =>
 					<HotelListItem key={hotelData.id} info={hotelData}/>)

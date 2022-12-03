@@ -29,14 +29,13 @@ const HotelList = () => {
 	}, [])
 	
 	useEffect(() => {
-		const sortedHotels = allHotels.current?.filter(({hotelName}) => hotelName.toLowerCase().includes(searchQuery.toLowerCase()))
+		const sortedHotels = allHotels.current?.filter(({hotel_name}) => hotel_name?.toLowerCase()?.includes(searchQuery?.toLowerCase()))
 		sortedHotels ? setHotels(sortedHotels) : null;
 	}, [searchQuery])
 	
 	const toggleSidebar = () => {
 		menuState ? setMenuState(false) : setMenuState(true)
 	}
-	
 	return (
 		<div>
 			<SearchHeader searchToggle={true} onInput={setSearchQuery} onOpen={toggleSidebar} title="Список отелей"/>
