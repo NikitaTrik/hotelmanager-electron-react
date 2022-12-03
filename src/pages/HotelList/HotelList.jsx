@@ -19,14 +19,17 @@ const HotelList = () => {
 	const [menuState, setMenuState] = useState(false)
 	const [hotels, setHotels] = useState([])
 	const [searchQuery, setSearchQuery] = useState('')
+	const [isLoading, setIsLoading] = useState(true)
 	let allHotels = useRef(null);
 
 	
 	useEffect(() =>{
 		console.log("Render")
-		fetchPosts().then(d => {
-			allHotels.current = d
-			setHotels(d)})
+		setTimeout(() => {
+			fetchPosts().then(d => {
+				allHotels.current = d
+				setHotels(d)}).finally(() => setIsLoading(false))
+		}, 1000)
 	}, [])
 	
 	useEffect(() => {
@@ -45,7 +48,7 @@ const HotelList = () => {
 		<div>
 			<SearchHeader searchToggle={true} onInput={setSearchQuery} onOpen={toggleSidebar} title="Список отелей"/>
 			<Sidebar menuState={menuState} toggleSlidebar={toggleSidebar}/>
-			<HotelItems hotels={hotels}/>
+			{isLoading ? <div style={{textAlign: "center", fontFamily: "SF Pro Display", fontWeight: 700, fontSize: '30px', marginTop: '100px'}}>Данные загружаются</div> : <HotelItems hotels={hotels}/>}
 		</div>
 	);
 };
