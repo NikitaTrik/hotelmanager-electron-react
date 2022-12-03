@@ -4,32 +4,37 @@ import HotelItems from "../../components/UI/HotelItems/HotelItems";
 import SearchHeader from "../../components/UI/SearchHeader/SearchHeader";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
 
+const fetchPosts = async () => {
+	try{
+		const {data} = await sendGet('http://localhost:8080/hotel/list')
+		return data
+	} catch (error){
+		console.log(error)
+		throw error
+	}
+}
 
 const HotelList = () => {
-	const HOTEL_LIST_URL = 'http://localhost:8080/hotel/list'
 	
 	const [menuState, setMenuState] = useState(false)
 	const [hotels, setHotels] = useState([])
 	const [searchQuery, setSearchQuery] = useState('')
 	let allHotels = useRef(null);
-	const fetchPosts = async () => {
-		try{
-			const {data} = await sendGet(HOTEL_LIST_URL)
-			return data
-		} catch (error){
-			console.log(error)
-			throw error
-		}
-	}
+
 	
 	useEffect(() =>{
+		console.log("Render")
 		fetchPosts().then(d => {
 			allHotels.current = d
 			setHotels(d)})
 	}, [])
 	
 	useEffect(() => {
-		const sortedHotels = allHotels.current?.filter(({hotel_name}) => hotel_name?.toLowerCase()?.includes(searchQuery?.toLowerCase()))
+		console.log("Hotels: ", hotels)
+	}, [hotels])
+	
+		useEffect(() => {
+		const sortedHotels = allHotels?.current?.filter(({hotel_name}) => hotel_name?.toLowerCase()?.includes(searchQuery?.toLowerCase()))
 		sortedHotels ? setHotels(sortedHotels) : null;
 	}, [searchQuery])
 	
