@@ -1,5 +1,6 @@
 .main{
 	width: 1000px;
+	position: relative;
 	padding: 20px 40px 30px 20px;
 	background: rgba(235, 235, 235, 0.93);
 	border-radius: 5px;
@@ -11,5 +12,25 @@ h2{
 	margin-bottom: 5px;
 }
 .wrapper{
+
 	margin-left: 20px;
+}
+
+.editBtn{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 28px;
+	right: 40px;
+}
+
+.block{
+	position: absolute;
+	width: 930px;
+	height: 500px;
+	background: rgba(0,0,0,0);
+	z-index: 100000;
+}
+.block.hide{
+	display: none;
 }

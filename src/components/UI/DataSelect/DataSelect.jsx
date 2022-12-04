@@ -5,7 +5,7 @@ import Select from "react-select";
 const DataSelect = ({placeholder, onOpen, onClose, options, value, setValue}) => {
 	return (
 		// eslint-disable-next-line react/prop-types
-		<Select value={value} onChange={(val) => setValue(val)} onMenuClose={() => options.length>5 ? onClose(605) : null} onMenuOpen={() => options.length>5 ? onOpen(680) : null} placeholder={placeholder} options={options.length > 0
+		<Select value={value} onChange={(val) => setValue(val)} onMenuClose={() => options?.length>5 ? onClose(605) : null} onMenuOpen={() => options?.length>5 ? onOpen(680) : null} placeholder={placeholder} options={options?.length > 0
 			// eslint-disable-next-line react/prop-types
 			// eslint-disable-next-line react/prop-types
 			? options?.map(item =>

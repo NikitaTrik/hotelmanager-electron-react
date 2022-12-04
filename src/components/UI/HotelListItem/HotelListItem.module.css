@@ -3,7 +3,7 @@
 	height: 400px;
 	background: #EBEBEB;
 	border-radius: 15px;
-	padding: 20px 20px 0 20px;
+	padding: 20px 20px 20px 20px;
 	transition: 0.5s all;
 }
 
@@ -24,9 +24,10 @@
 	align-items: center;
 	padding: 0px 1px;
 	width: 520px;
-	height: 40px;
+	height: 30px;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	margin-left: 5px;
 }
 
 .town{
@@ -44,6 +45,7 @@
 
 .about{
 	margin-top: 3px;
+	margin-left: 5px;
 	width: 520px;
 	height: 64px;
 	border-radius: 5px;
@@ -75,7 +77,6 @@
 }
 
 .descr{
-	margin-top: 15px;
 	width: 520px;
 	height: fit-content;
 	max-height: 100px;
@@ -88,9 +89,14 @@
 }
 
 .text{
+	width: 85%;
+	word-break: break-all;
+	overflow: hidden;
+	height: 90px;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 23px;
+	margin-left: 5px;
 }
 
 .wrapper{
