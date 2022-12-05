@@ -6,3 +6,10 @@
 	gap: 0 40px;
 	margin: 0 auto;
 }
+
+.person{
+	position: absolute;
+	bottom: 40px;
+	right: 140px;
+	z-index: 5;
+}

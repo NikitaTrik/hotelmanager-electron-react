@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from 'react';
+import {useNavigate} from "react-router-dom";
 import {sendGet} from "../../API/PostService";
 import ConfirmWindow from "../../components/UI/ConfirmWindow/ConfirmWindow";
 import CreateButton from "../../components/UI/CreateButton/CreateButton";
@@ -8,11 +9,14 @@ import InfoDisplay from "../../components/UI/InfoDisplay/InfoDisplay";
 import SearchHeader from "../../components/UI/SearchHeader/SearchHeader";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
 import classes from "./HotelCreate.module.css";
+import person from "./Group 47.png";
 
+const redirect = useNavigate();
+const sendHotelData = (data) => {
+	axios.post('http://localhost:8080/hotel', data).then(() => redirect('/'))
+}
 const HotelCreate = () => {
-	const sendHotelData = (data) => {
-		axios.post('http://localhost:8080/hotel', data)
-	}
+	
 	const fetchPosts = async (url) => {
 		try{
 			const {data} = await sendGet(url)
@@ -52,8 +56,9 @@ const HotelCreate = () => {
 				<InfoDisplay title='О персонале' data={data}/>
 				<CreateButton btnText="Создать" onEvent={setConfirmWindow} className={true} type="submit"/>
 				<ConfirmWindow text="создание" data={formsData} sendFunction={sendHotelData} windowToggle={setConfirmWindow} windowState={confirmWindow}/>
+				
 			</div>
-			
+			<img className={classes.person} src={person} alt="person"/>
 		</div>
 	);
 };

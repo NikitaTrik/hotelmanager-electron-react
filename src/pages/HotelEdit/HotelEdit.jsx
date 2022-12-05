@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from 'react';
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {sendGet} from "../../API/PostService";
 import ConfirmWindow from "../../components/UI/ConfirmWindow/ConfirmWindow";
 import CreateButton from "../../components/UI/CreateButton/CreateButton";
@@ -16,7 +16,7 @@ const HotelEdit = () => {
 		axios.put(`http://localhost:8080/hotel/${data.id}`, formsData)
 	}
 	
-	const deleteHotel = () => axios.delete(`http://localhost:8080/hotel/${data.id}`)
+	const deleteHotel = () => axios.delete(`http://localhost:8080/hotel/${data.id}`).then(() => redirect('/'))
 	const fetchPosts = async (url) => {
 		try{
 			const {data} = await sendGet(url)
@@ -26,7 +26,7 @@ const HotelEdit = () => {
 			throw error
 		}
 	}
-
+	const redirect = useNavigate()
 	const [locations, setLocations] = useState([])
 	const [workers, setWorkers] = useState([])
 	const [choosed, setChoosed] = useState({label: data.Worker.name, value: data.Worker.name})
